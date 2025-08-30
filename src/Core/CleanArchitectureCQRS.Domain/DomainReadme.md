@@ -6,7 +6,8 @@
 # Domain (Entities / Business Rules)
 
 ## Amaç
-Temel iş kuralları, entity'ler, value objects ve domain event'ler burada. Hiçbir dış bağımlılık (EF, AutoMapper, MediatR) olmamalı.
+Temel iş kuralları, entity'ler, value objects ve domain event'ler burada.
+Hiçbir dış bağımlılık (EF, AutoMapper, MediatR) olmamalı.
 
 ## Sorumluluklar
 - Entities (Aggregate Roots)
@@ -31,6 +32,8 @@ Temel iş kuralları, entity'ler, value objects ve domain event'ler burada. Hiç
 ```csharp
 public class Product
 {
+//bu Domain-Driven Design örneği, (yani simdilik asagiyi gorme ama ogrencez bunuda)
+//Product entity'sinin nasıl oluşturulacağını ve iş kurallarını (invariants) nasıl uygulayacağını gösterir.
     public int Id { get; private set; }
     public string Name { get; private set; }
     public Money Price { get; private set; }

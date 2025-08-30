@@ -30,7 +30,6 @@ Neden
 Persistence uygulama dış sınırıdır. Application yalnızca repository interface'lerini kullanır; implementasyon burada kalır.
 ````
 
-````
 ## Örnek DbContext kayıt (DI)
 ```csharp
 public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration cfg)

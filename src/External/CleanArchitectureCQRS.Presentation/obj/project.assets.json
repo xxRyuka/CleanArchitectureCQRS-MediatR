@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "CleanArchitectureCQRS.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CleanArchitectureCQRS.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CleanArchitectureCQRS.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchitectureCQRS.Application.dll": {}
+        }
+      },
+      "CleanArchitectureCQRS.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/CleanArchitectureCQRS.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchitectureCQRS.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CleanArchitectureCQRS.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/CleanArchitectureCQRS.Application/CleanArchitectureCQRS.Application.csproj",
+      "msbuildProject": "../../Core/CleanArchitectureCQRS.Application/CleanArchitectureCQRS.Application.csproj"
+    },
+    "CleanArchitectureCQRS.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Core/CleanArchitectureCQRS.Domain/CleanArchitectureCQRS.Domain.csproj",
+      "msbuildProject": "../../Core/CleanArchitectureCQRS.Domain/CleanArchitectureCQRS.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "CleanArchitectureCQRS.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ASUS\\.nuget\\packages\\": {},
@@ -38,7 +75,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ASUS\\RiderProjects\\CleanArchitectureCQRS\\src\\Core\\CleanArchitectureCQRS.Application\\CleanArchitectureCQRS.Application.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\RiderProjects\\CleanArchitectureCQRS\\src\\Core\\CleanArchitectureCQRS.Application\\CleanArchitectureCQRS.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
