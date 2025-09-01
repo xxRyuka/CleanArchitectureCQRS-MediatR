@@ -8,6 +8,12 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\CleanArchitectureCQRS.Application\CleanArchitectureCQRS.Application.csproj" />
+      <ProjectReference Include="..\CleanArchitectureCQRS.Persistence\CleanArchitectureCQRS.Persistence.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="13.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
     </ItemGroup>
 
 </Project>
