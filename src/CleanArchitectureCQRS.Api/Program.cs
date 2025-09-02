@@ -1,7 +1,10 @@
+using CleanArchitectureCQRS.Application.Services;
 using CleanArchitectureCQRS.Persistence;
+using CleanArchitectureCQRS.Persistence.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<ICarService, CarService>();
 
 builder.Services.AddControllers()
     .AddApplicationPart(typeof(CleanArchitectureCQRS.Presentation.PresentationAssembly).Assembly);

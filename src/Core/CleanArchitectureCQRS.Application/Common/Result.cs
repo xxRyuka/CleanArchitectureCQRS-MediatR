@@ -9,19 +9,20 @@ public class Result
 
     public Result(ResultStatus status, IEnumerable<Error> errors)
     {
+        
         Status = status;
 
         // invariants
-        if (status == ResultStatus.Success && errors!.ToList().Count > 0)
+        if (status == ResultStatus.Success && errors.ToList().Count > 0)
             throw new InvalidOperationException("Success result cannot contain errors.");
 
-        if (status != ResultStatus.Success && errors!.ToList().Count == 0)
+        if (status != ResultStatus.Success && errors.ToList().Count == 0)
             throw new InvalidOperationException("Failure result must contain at least one error.");
         Errors = (errors ?? Enumerable.Empty<Error>()).ToList().AsReadOnly();
     }
 
 
-    public static Result Success() => new Result(ResultStatus.Success, null);
+    public static Result Success() => new Result(ResultStatus.Success, Enumerable.Empty<Error>());
     
     
 
@@ -43,7 +44,7 @@ public sealed class Result<T> : Result
 {
     public T Data { get; }
 
-    public Result(T data ) : base(ResultStatus.Success, null)
+    public Result(T data ) : base(ResultStatus.Success, Enumerable.Empty<Error>())
     {
         // checking invariants
         if (data == null)

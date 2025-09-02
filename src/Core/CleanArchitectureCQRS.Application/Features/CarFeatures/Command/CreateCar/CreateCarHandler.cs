@@ -1,13 +1,21 @@
 ﻿using CleanArchitectureCQRS.Application.Common;
+using CleanArchitectureCQRS.Application.Features.CarFeatures.Dtos;
+using CleanArchitectureCQRS.Application.Services;
 using MediatR;
 
 namespace CleanArchitectureCQRS.Application.Features.CarFeatures.Command.CreateCar;
 
-public class CreateCarHandler : IRequestHandler<CreateCarCommand, Result<int>>
+public class CreateCarHandler : IRequestHandler<CreateCarCommand, Result<CreateCarResponse>>
 {
-    
-    public Task<Result<int>> Handle(CreateCarCommand request, CancellationToken cancellationToken)
+    private readonly ICarService _carService;
+
+    public CreateCarHandler(ICarService carService)
     {
-        throw new NotImplementedException();
+        _carService = carService;
+    }
+
+    public async Task<Result<CreateCarResponse>> Handle(CreateCarCommand request, CancellationToken cancellationToken)
+    {
+       return await _carService.CreateCar(request,cancellationToken);
     }
 }
