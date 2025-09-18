@@ -64,4 +64,7 @@ public sealed class Result<T> : Result
     {
         return new Result<T>(status, errors);
     }
+    
+    
+    
 }
